@@ -14,7 +14,7 @@ Most agent workflows can produce code, but long projects often lose state betwee
 Spec Driving addresses that gap:
 
 - **Bootstrap project discipline** — create or complete `AGENTS.md` and `docs/dev_spec.md` before L2/L3 work begins.
-- **Stop when material information is missing** — ask one blocking question, record the confirmed answer, then continue. Do not repeatedly ask for decisions that are already documented.
+- **阶段决策包，确认后持续推进 / Decide once per phase, then keep moving** — collect the current phase's material decisions into one recommended decision package. Confirm it, record it, and proceed; use reversible defaults for ordinary implementation details.
 - **Keep durable project state** — scope, current phase, dependencies, acceptance criteria, decisions, risks, blockers, and next steps live in the repository rather than in chat memory.
 - **Require evidence, not optimism** — HTTP 200, mock data, and code review alone do not prove delivery. Validate through real APIs, data, browser interaction, third-party test environments, or measurable performance evidence.
 - **Preserve delivery boundaries** — distinguish verified work from WIP, avoid committing secrets or temporary files, and require explicit authorization for irreversible external actions.
@@ -29,9 +29,9 @@ Inspect AGENTS.md + docs/dev_spec.md
   ↓
 Missing or insufficient information?
   ↓
-Read-only discovery → ask the one blocking question → write the decision into project files
+Read-only discovery → confirm the phase decision package → write decisions and assumptions into project files
   ↓
-Choose the applicable planning/debugging/testing/review method
+Start the next safe action in the same turn → choose the applicable planning/debugging/testing/review method
   ↓
 Implement → verify with real evidence → update dev spec → commit honestly
 ```
