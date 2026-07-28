@@ -15,6 +15,8 @@ Spec Driving addresses that gap:
 
 - **Bootstrap project discipline** — create or complete `AGENTS.md` and `docs/dev_spec.md` before L2/L3 work begins.
 - **阶段决策包，确认后持续推进 / Decide once per phase, then keep moving** — collect the current phase's material decisions into one recommended decision package. Confirm it, record it, and proceed; use reversible defaults for ordinary implementation details.
+- **路线图先可见，再进入实现 / Show the roadmap before implementation** — after design approval, explicitly present every delivery phase, its dependencies and acceptance outcome before beginning L2/L3 work; never hide the plan behind a document link.
+- **尊重本轮授权范围 / Respect the turn's authorization** — distinguish “design only” from “execution authorized,” so the agent neither acts beyond the latest instruction nor mistakes an approval wait for a blocker.
 - **Keep durable project state** — scope, current phase, dependencies, acceptance criteria, decisions, risks, blockers, and next steps live in the repository rather than in chat memory.
 - **Require evidence, not optimism** — HTTP 200, mock data, and code review alone do not prove delivery. Validate through real APIs, data, browser interaction, third-party test environments, or measurable performance evidence.
 - **Preserve delivery boundaries** — distinguish verified work from WIP, avoid committing secrets or temporary files, and require explicit authorization for irreversible external actions.
