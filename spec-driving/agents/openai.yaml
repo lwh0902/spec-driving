@@ -1,0 +1,6 @@
+interface:
+  display_name: "Spec Driving"
+  short_description: "以项目规范、真实证据和阶段门禁推进长期软件项目交付"
+  default_prompt: "使用 $spec-driving 按当前 dev spec 阶段推进项目，并以真实验证作为完成依据。"
+policy:
+  allow_implicit_invocation: false
