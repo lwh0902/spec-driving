@@ -3,7 +3,7 @@
 > 将任何长期软件项目带入规范驱动、证据驱动的交付流程。
 > Turn long-lived software projects into spec-driven, evidence-based delivery systems.
 
-**Current version / 当前版本：v0.2**
+**Current version / 当前版本：v0.3**
 
 `spec-driving` is a governance skill for AI-assisted software delivery. It does not teach an agent a particular framework or replace planning, debugging, testing, or review skills. Instead, it establishes the project rules, durable state, acceptance evidence, and delivery boundaries that keep those methods aligned over a long project.
 
@@ -19,6 +19,7 @@ Spec Driving addresses that gap:
 - **阶段决策包，确认后持续推进 / Decide once per phase, then keep moving** — collect the current phase's material decisions into one recommended decision package. Confirm it, record it, and proceed; use reversible defaults for ordinary implementation details.
 - **路线图先可见，再进入实现 / Show the roadmap before implementation** — after design approval, explicitly present every delivery phase, its dependencies and acceptance outcome before beginning L2/L3 work; never hide the plan behind a document link.
 - **尊重本轮授权范围 / Respect the turn's authorization** — distinguish “design only” from “execution authorized,” so the agent neither acts beyond the latest instruction nor mistakes an approval wait for a blocker.
+- **先证关键事实，再决定工程规模 / Prove the decisive fact before scaling delivery** — classify L2/L3 work as evidence-first, implementation-first, or diagnostic-first. An authorized start begins with the smallest trustworthy proof when feasibility is still unknown; Git, worktrees, databases, plans, and parallelism are tools, not entry tickets.
 - **Keep durable project state** — scope, current phase, dependencies, acceptance criteria, decisions, risks, blockers, and next steps live in the repository rather than in chat memory.
 - **Require evidence, not optimism** — HTTP 200, mock data, and code review alone do not prove delivery. Validate through real APIs, data, browser interaction, third-party test environments, or measurable performance evidence.
 - **Preserve delivery boundaries** — distinguish verified work from WIP, avoid committing secrets or temporary files, and require explicit authorization for irreversible external actions.
@@ -37,9 +38,11 @@ Read-only discovery → confirm the phase decision package → write decisions a
   ↓
 Present the design review: goal, full roadmap, current-stage card, decisions, authorization, next action
   ↓
-Design only: wait for approval / Execution authorized: start the next safe action in the same turn
+Design only: wait for approval / Execution authorized: classify phase shape and record the phase contract
   ↓
-Implement → verify with real evidence → update dev spec → commit honestly
+Evidence-first: obtain the first trustworthy proof → Implementation-first: build with the appropriate methods
+  ↓
+Verify with real evidence → update dev spec → commit honestly when Git delivery is appropriate
 ```
 
 The key rule is simple:
@@ -84,7 +87,7 @@ $spec-driving
 本轮含执行：按当前 dev spec 实现，并用真实数据或测试环境验证。
 ```
 
-The skill records confirmed decisions, then begins the first safe, valuable action in the same turn. It does not treat HTTP 200, mock data, or code review alone as delivery proof.
+The skill records confirmed decisions and the current phase contract, then begins the first safe, valuable action in the same turn. When a decisive fact is unknown, that action is a minimal trustworthy probe rather than automatic scaffolding or full engineering. It does not treat HTTP 200, mock data, or code review alone as delivery proof.
 
 ### Continue or recover an existing project / 继续或恢复已有项目
 
